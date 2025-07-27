@@ -85,6 +85,7 @@ def get_dataloaders(args):
                           target_shape=(args.img_size, args.img_size,
                                         args.img_size)),  # crop only object region
             tio.RandomFlip(axes=(0, 1, 2)),
+            tio.Resize((128,128,128))
         ]),
         threshold=1000)
 
